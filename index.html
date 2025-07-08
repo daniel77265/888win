@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>888Win Cassino Online</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <header>
+    <h1>🎰 888Win Cassino</h1>
+    <nav>
+      <ul>
+        <li><a href="#jogos">Jogos</a></li>
+        <li><a href="#promocoes">Promoções</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="heroi">
+      <h2>Bem-vindo ao 888Win</h2>
+      <p>O melhor cassino online do Brasil!</p>
+      <a class="btn" href="#jogos">Jogue Agora</a>
+    </section>
+
+    <section id="jogos">
+      <h2>🎮 Jogos Populares</h2>
+      <div class="jogo-lista">
+        <div class="jogo-carta" onclick="girarRoleta()">🎡 Roleta</div>
+        <div class="jogo-carta" onclick="girarSlots()">🎰 Caça-Níqueis</div>
+        <div class="jogo-carta">🃏 Blackjack (em breve)</div>
+      </div>
+      <div class="caixa-resultados">
+        <div id="resultadoRoleta" class="desaparecer">Clique na Roleta para jogar</div>
+        <div id="resultadoSlots" class="desaparecer">Clique no Caça-Níqueis para girar</div>
+      </div>
+    </section>
+
+    <section id="promocoes">
+      <h2>🔥 Promoções</h2>
+      <p>Bônus de boas-vindas de até R$1.000!</p>
+    </section>
+
+    <section id="sobre">
+      <h2>🧾 Sobre o 888Win</h2>
+      <p>Somos um cassino virtual dedicado à diversão e à emoção dos jogos de azar online.</p>
+    </section>
+
+    <section id="contato">
+      <h2>📬 Fale Conosco</h2>
+      <p>E-mail: suporte@888win.com</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 888 Vitória. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Sons -->
+  <audio id="audioRoleta" src="roleta.mp3" preload="auto"></audio>
+  <audio id="audioSlots" src="slots.mp3" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script>
+    function girarRoleta() {
+      const audio = document.getElementById("audioRoleta");
+      audio.play();
+      const resultado = Math.random() < 0.5 ? "Vermelho" : "Preto";
+      document.getElementById("resultadoRoleta").textContent = "Resultado: " + resultado;
+      document.getElementById("resultadoRoleta").classList.remove("desaparecer");
+    }
+
+    function girarSlots() {
+      const audio = document.getElementById("audioSlots");
+      audio.play();
+      const premios = ["🍒", "🍋", "🔔", "⭐", "💎"];
+      const resultado = premios[Math.floor(Math.random() * premios.length)];
+      document.getElementById("resultadoSlots").textContent = "Resultado: " + resultado;
+      document.getElementById("resultadoSlots").classList.remove("desaparecer");
+    }
+  </script>
+</body>
+</html>
